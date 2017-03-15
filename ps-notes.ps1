@@ -21,14 +21,15 @@
 # Get-Service -Name BFE, BITS
 
 # XmlNodeAdaptor Working with XML files
+#Set-PSDebug -Trace 2
 $path = "$(Get-Location)\docs\plant_catalog.xml"
 $xmlDoc = New-Object Xml.XmlDocument
 $xmlDoc.Load($path)
 #$xmlDoc | Get-Member
-#$plants = $xmlDoc.GetElementsByTagName("PLANT")
+$plants = $xmlDoc.GetElementsByTagName("PLANT")
 #$plants[0]
-$plants[0].COMMON
-$plants[0].BOTANICAL
-$plants[0].ZONE
-$plants[0].PRICE
+Write-Host -NoNewLine $plants[0].COMMON
+Write-Host -NoNewLine $plants[0].BOTANICAL
+Write-Host -NoNewLine $plants[0].ZONE
+Write-Host -NoNewLine $plants[0].PRICE
 
